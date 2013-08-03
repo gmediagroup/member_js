@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Members</title>
+<script type="text/javascript" src="linkedselect.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr><td>Страна</td>
+  <td>Оператор</td>
+  <td>Номер</td>
+  <td>Стоимость</td>
+  </tr>
+  <tr>
+    <td><!-- Первый (главный) список (изначально заполнен вручную) -->
+  <select size="4" class="select_country" id="op">
+    <option value="ru"> Россия </option>
+    <option value="ukr"> Украина </option>
+    <option value="kaz"> Казахстан </option>
+    <option value="tad"> Таджикистан </option>
+    <option value="est"> Эстония </option>
+    <option value="lit"> Литва </option>
+    <option value="lat"> Латвия </option>
+    <option value="spa"> Испания </option>
+    <option value="gb"> Великобритания </option>
+	<option value="swe"> Швеция </option>
+	<option value="pol"> Польша </option>
+	<option value="ch"> Чехия </option>
+	<option value="nor"> Норвегия </option>
+    <option value="fin"> Финляндия </option>
+    <option value="gol"> Голландия </option>
+  </select></td>
+    <td><!-- Подчиненный список 1 (изначально пуст) -->
+  <select size="4" class="select_oper" id="List2">
+  </select></td>
+    <td><!-- Подчиненный список 2 (изначально пуст) -->
+  <select size="4" class="select_number" id="List3">
+  </select></td>
+    <td><!-- стоимость -->
+	<select size="4" class="select_cost" id="cost4">
+	</select></td>
+  </tr>
+  <tr>
+    <td colspan="4">
+        <FORM NAME="pform">
+        <input type="text" NAME="pword">
+        <input TYPE="button" NAME="button1" VALUE="ok" >
+        </form>
+    </td>
+  </tr>
+</table>  
+<script type="text/javascript">
+// Создаем новый объект связанных списков
+var syncList1 = new syncList;
+
+// Определяем значения подчиненных списков (2 и 3 селектов)
+syncList1.dataList = {
+
+<!-- Россия -->
+
+  'ru':{
+  	  'ru_beeline':'Билайн',
+   	  'ru_mts':'МТС',
+   	  'ru_megafon':'Мегафон',
+  	  'ru_delta_skylink':'Дельта Телеком (SkyLink)',
+      'ru_tele2':'TELE2',
+	  'ru_utel':'UTEL',
+	  'ru_akoc':'AKOC',
+	  'ru_baikal_west_kom':'БайкалВестКом',
+	  'ru_enisey_telekom':'Енисей Телеком',
+  	  'ru_zao_ast_gsm':'ЗАО Астрахань GSM',
+   	  'ru_zao_mobikom':'ЗАО Мобиком (Все регионы)',
+   	  'ru_zao_nss':'ЗАО НСС (Все регионы)',
+   	  'ru_zao_rostov_tele2':'ЗАО Ростовская Сотовая Связь (Теле-2)',
+   	  'ru_zao_smarts':'ЗАО СМАРТС',
+   	  'ru_zao_sonic_duo':'ЗАО Соник-Дуо',
+
+	  'ru_zao_ulianovsk_gsm':'ЗАО Ульяновск GSM',
+	  'ru_zao_uralskiy_gsm':'ЗАО Уральский GSM',
+ 	  'ru_motiv':'МОТИВ',
+   	  'ru_ntk':'НТК',
+   	  'ru_altaysvaz':'Алтайсвязь (ООО Мобилфон)',
+	  'ru_mss_povolje':'ОАО МСС-Поволжье (Мегафон)',
+	  'ru_orenburg_gsm':'Оренбург GSM',
+  	  'ru_saratov_mobile':'Саратов-Мобайл',
+  	  'ru_stek_gsm':'СТеК Джи Эс Эм',
+	  'ru_cifrovaya_ekspansiya':'Цифровая экспансия'
+	  },
+  
+<!-- Украина -->
+  'ukr':{
+      'ukr_umc':'UMC (Украина)',
+	  'ukr_kievstar':'Киевстар (Украина)',
+	  'ukr_others':'Другие (билайн и т.д.)'
+	  },
+	  
+<!-- Эстония -->
+  
+  'est':{
+      'est_elisa':'Elisa',
+	  'est_emt':'Emt',
+  	  'est_tele2':'Tele-2'
+	  },
+	  
+<!-- Литва -->
+  
+  'lit':{
+      'lit_bite':'Bite',
+	  'lit_omnitel':'Omnitel',
+  	  'lit_tele2':'Tele-2'
+	  },
+	  
+<!-- Латвия -->
+  
+	'lat':{
+	  'lat_lmt':'Lmt',
+  	  'lat_tele2':'Tele-2'
+	  },
+	  
+<!-- Казахстан -->
+  
+	'kaz':{
+	  'kaz_kcell':'K-Cell',
+  	  'kaz_kartel':'КарТел'
+	  },
+	  
+<!-- Таджикистан -->
+  
+	'tad':{
+	  'tad_mlt':'MLT',
+  	  'tad_indigo':'Индиго(Таджикистан)	'
+	  },
+	  
+<!-- Испания -->
+  
+	'spa':{
+	  'spa_euskaltel':'Euskaltel',
+	  'spa_movistar':'Movistar',
+	  'spa_orange':'Orange',
+	  'spa_r':'R',
+	  'spa_telecable':'Telecable',
+	  'spa_vodafone':'Vodafone',
+  	  'spa_yoigo':'Yoigo'
+	  },
+	  
+<!-- Великобритания -->
+	  
+	'gb':{
+	  'gb_o2':'O2',
+	  'gb_orange':'Orange',
+	  'gb_virgin':'T-Mobile/Virgin',
+	  'gb_three':'Three',
+	  'gb_vodafone':'Vodafone'
+	  },
+	  
+<!-- Швеция -->
+
+	'swe':{
+	  'swe_tele2':'Tele2',
+  	  'swe_telenor':'Telenor',
+	  'swe_telia':'Telia',
+	  'swe_tre':'Tre'
+	  },
+	  
+<!-- Польша -->
+
+	'pol':{
+	  'pol_era':'Era',
+  	  'pol_orange':'Orange',
+	  'pol_play':'Play',
+	  'pol_plus':'Plus'
+	  },
+	  
+<!-- Чехия -->
+	  
+  'ch':{
+      'ch_o2':'O2',
+	  'ch_t-mobile':'T-Mobile',
+  	  'ch_vodafone':'Vodafone'
+	  },
+	  
+<!-- Норвегия -->
+
+  'nor':{
+      'nor_netcom':'NetCom',
+	  'nor_tele2':'Tele2',
+  	  'nor_telenor':'Telenor',
+  	  'nor_vantelo':'Ventelo'
+	  },
+	  
+<!-- Финляндия -->
+
+  'fin':{
+      'fin_dna':'DNA',
+	  'fin_elisa':'Elisa',
+  	  'fin_saunalahti':'Saunalahti',
+  	  'fin_sonera':'Sonera'
+	  },
+	  
+<!-- Голландия -->
+
+	'gol':{
+	  'gol_kpn':'KPN',
+	  'gol_orange':'Orange',
+	  'gol_t-mobile':'T-Mobile',
+	  'gol_tele2':'Tele2',
+	  'gol_telfort':'Telfort',
+  	  'gol_vodafone':'Vodafone'
+	  },
+
+<!-- номера -->
+
+  'ru_tele2':{'4161':'4161'},
+  'ru_utel':{'4161':'4161'},
+  'ru_akoc':{'4161':'4161'},
+  'ru_baikal_west_kom':{'4161':'4161'},
+  'ru_beeline':{'4161':'4161'},
+  'ru_delta_skylink':{'4161':'4161'},
+  'ru_enisey_telekom':{'4161':'4161'},
+  'ru_zao_ast_gsm':{'4161':'4161'},
+  'ru_zao_mobikom':{'4161':'4161'},
+  'ru_zao_nss':{'4161':'4161'},
+  'ru_zao_rostov_tele2':{'4161':'4161'},
+  'ru_zao_smarts':{'4161':'4161'},
+  'ru_zao_sonic_duo':{'4161':'4161'},
+  'ru_zao_ulianovsk_gsm':{'4161':'4161'},
+  'ru_zao_uralskiy_gsm':{'4161':'4161'},
+  'ru_megafon':{'4161':'4161'},
+  'ru_motiv':{'4161':'4161'},
+  'ru_mts':{'4161':'4161'},
+  'ru_ntk':{'4161':'4161'},
+  'ru_altaysvaz':{'4161':'4161'},
+  'ru_mss_povolje':{'4161':'4161'},
+  'ru_orenburg_gsm':{'4161':'4161'},
+  'ru_saratov_mobile':{'4161':'4161'},
+  'ru_stek_gsm':{'4161':'4161'},
+  'ru_cifrovaya_ekspansiya':{'4161':'4161'},
+  
+  'ukr_umc':{'5014':'5014'},
+  'ukr_kievstar':{'5014':'5014'},
+  'ukr_others':{'5014':'5014'},
+  
+  'est_elisa':{'13202':'13202'},
+  'est_emt':{'13202':'13202'},
+  'est_tele2':{'13202':'13202'},
+  
+  'lit_bite':{'1390':'1390'},
+  'lit_omnitel':{'1390':'1390'},
+  'lit_tele2':{'1390':'1390'},
+  
+  'lat_lmt':{'29301199':'29301199'},
+  'lat_tele2':{'26000613':'26000613'},
+  
+  'kaz_kcell':{'4161':'4161'},
+  'kaz_kartel':{'4161':'4161'},
+  
+  'tad_mlt':{'1171':'1171'},
+  'tad_indigo':{'1171':'1171'},
+
+  
+  'spa_euskaltel':{'spa_5339':'5339'},
+  'spa_movistar':{'spa_5339':'5339'},
+  'spa_orange':{'spa_5339':'5339'},
+  'spa_r':{'spa_5339':'5339'},
+  'spa_telecable':{'spa_5339':'5339'},
+  'spa_vodafone':{'spa_5339':'5339'},
+  'spa_yoigo':{'spa_5339':'5339'},
+  
+  'gb_o2':{'69067':'69067'},
+  'gb_orange':{'69067':'69067'},
+  'gb_virgin':{'69067':'69067'},
+  'gb_three':{'69067':'69067'},
+  'gb_vodafone':{'69067':'69067'},
+  
+  'swe_tele2':{'72170':'72170'},
+  'swe_telenor':{'72170':'72170'},
+  'swe_telia':{'72170':'72170'},
+  'swe_tre':{'72170':'72170'},
+  
+  'pol_era':{'7910':'7910'},
+  'pol_orange':{'7910':'7910'},
+  'pol_play':{'7910':'7910'},
+  'pol_plus':{'7910':'7910'},
+  
+  'ch_o2':{'9090199':'9090199'},
+  'ch_t-mobile':{'9090199':'9090199'},
+  'ch_vodafone':{'9090199':'9090199'},
+  
+  'nor_netcom':{'2322':'2322'},
+  'nor_tele2':{'2322':'2322'},
+  'nor_telenor':{'2322':'2322'},
+  'nor_vantelo':{'2322':'2322'},
+  
+  'fin_dna':{'179479':'179479'},
+  'fin_elisa':{'179479':'179479'},
+  'fin_saunalahti':{'179479':'179479'},
+  'fin_sonera':{'179479':'179479'},
+  
+  'gol_kpn':{'7117':'7117'},
+  'gol_orange':{'7117':'7117'},
+  'gol_t-mobile':{'7117':'7117'},
+  'gol_tele2':{'7117':'7117'},
+  'gol_telfort':{'7117':'7117'},
+  'gol_vodafone':{'7117':'7117'},
+  
+<!-- стоимость -->
+   	'saratov_3649':{'7.63$':'7.63$'},
+   	'tarif2':{'8.95$':'8.95$'},
+   	'zao_nss_3649':{'4.75$':'4.75$'},
+	'megafon_3649':{'5.87$':'5.87$'},
+	'3649':{'9.95$':'9.95$'},
+	'1171':{'5$':'5$'},
+	'7019':{'70rub':'70 руб'},
+	'9916':{'2.8$':'2.8$'},
+	
+	'5014':{'4.20$':'4.20$'},
+	'4161':{'4.20$':'4.20$'},
+	
+	'13202':{'3.5$':'3.5$'},
+	
+	'1390':{'3$':'3$'},
+	
+	'26000613':{'5$':'5$'},
+	'29301199':{'5$':'5$'},
+	
+	'9915':{'3.85$':'3.85$'},
+	
+	'spa_5339':{'1.90$':'1.90$'},
+	
+	'69067':{'3.40$':'3.40$'},
+	
+	'72170':{'2.60$':'2.60$'},
+	
+	'7910':{'4$':'4$'},
+	
+	'9090199':{'4.35$':'4.35$'},
+	
+	'2322':{'3.10$':'3.10$'},
+	
+	'179479':{'2.50$':'2.50$'},
+	
+	'7117':{'2$':'2$'}
+	
+};
+// Включаем синхронизацию связанных списков
+syncList1.sync("op","List2","List3", "cost4");
+</script>
+            <!-- java ! -->
+</body>
+</html>
